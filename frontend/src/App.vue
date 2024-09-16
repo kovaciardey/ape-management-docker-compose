@@ -2,8 +2,8 @@
   <div>
     WELCOME TO THE VUE APP FROM THROUGH THE NGINX CONTAINER
 
-<!--    <p>{{ message }}</p>-->
-<!--    <p>{{ time }}</p>-->
+    <p>{{ message }}</p>
+    <p>{{ time }}</p>
   </div>
 </template>
 
@@ -17,12 +17,12 @@ export default {
     };
   },
   created() {
-    // this.fetchWelcomeMessage();
+    this.fetchWelcomeMessage();
   },
   methods: {
     async fetchWelcomeMessage() {
       try {
-        const response = await fetch('http://php-1:9000/welcome'); // Update URL if needed
+        const response = await fetch('http://localhost:8080/welcome');
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }

@@ -22,6 +22,7 @@ FROM nginx AS production-stage
 
 COPY --from=build-stage /vue_app/dist /usr/share/nginx/html
 
+# TODO: may need to update the port
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
