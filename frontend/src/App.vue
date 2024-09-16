@@ -22,7 +22,8 @@ export default {
   methods: {
     async fetchWelcomeMessage() {
       try {
-        const response = await fetch('http://localhost:8080/welcome');
+        // const response = await fetch('http://localhost:8080/welcome');
+        const response = await fetch('http://192.168.0.23:8080/welcome'); // hardcode prod IP
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
